@@ -95,3 +95,10 @@ p{
 #bottom{
     margin-bottom: 40px;
 }
+
+
+.goal-not-reached-btn {
+    background: #ffffff;
+    color: #2E2E2E;
+    font-weight: 400;
+}
