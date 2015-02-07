@@ -5,141 +5,153 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+    
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+    </style>
 </head>
-    
-    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,700' rel='stylesheet' type='text/css'>
-
-<body>
-<div id="container">
-    <section id="firstColour">
-        <div id="login" class="navButtons">
-            <a data-toggle="modal" data-target="#loginModal">Login</a>
-        </div>
-        <div id="signup" class="navButtons">
-            <a data-toggle="modal" data-target="#signupModal">Sign Up</a>
-        </div>
-
-        <h1>
-            Focus:
-            <span>Build something Every Day</span>
-        </h1>
-        <h2>What will you <span>build</span> today?</h2>
-        <form>
-            <div class="form-group">
-                <div class="col-md-6 col-md-offset-3">
-                    <input type="text" maxlength="50" id="myBuildField" class="form-control" name="firstname" required/>
-                </div>
+<body ng-controller="mainController">
+    <div id="container">
+        <section id="firstColour" class="container">
+            <div id="login" class="navButtons">
+                <a data-toggle="modal" data-target="#loginModal">Login</a>
             </div>
-        </form>
-        
-        <div class="completion-check">
-            <div class="row col-xs-12">
-                <h2>How did you go?</h2>
-                
-                <div class="completion-buttons">
-                    <div class="col-lg-3 col-lg-push-3 col-md-3 col-md-3 col-md-push-3 col-xs-6">
-                        <a href="#" class="btn btn-success btn-lg btn-block">I'm completed</a>
-                    </div>
+            <div id="signup" class="navButtons">
+                <a data-toggle="modal" data-target="#signupModal">Sign Up</a>
+            </div>
 
-                    <div class="col-lg-3 col-lg-push-3 col-md-3 col-md-3 col-md-push-3 col-xs-6">
-                        <a href="#" class="btn btn-default btn-lg btn-block goal-not-reached-btn">I didn't reach my goal</a>
+            <h1>
+                Focus: <span>Build something Every Day</span>
+            </h1>
+            <h2>What will you <span>build</span> today?</h2>
+            <form ng-submit="createTask()">
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="text" maxlength="50" class="form-control build-task-field" name="task" ng-scope="task.description" required/>
                     </div>
                 </div>
-    
-            </div>
-        </div>
-    </section>
+            </form>
 
-    <div id="mainPage">
-        <section id="secondColour">
-            <div id="FAQ1" class="FAQs col-md-6 col-md-offset-3">
-                <h1>What is Focus</h1>
-                <p>
-                    Focus is a platform with a mantra. It’s all about building the things you love, one day at a time. Post a daily project of your choice and succeed in completing it with the help and support of a community of like-minded users. Earn reputation credit and tips from others as you complete your goals and enhance your skillset. 
+            <div class="completion-check">
+                <div class="col-xs-12">
+                    <h2>How did you go?</h2>
 
-                </p>
-            </div>
-            <div id="FAQ2" class="FAQs col-md-6 col-md-offset-3">
-                <h1>How can Focus help me?</h1>
-                <p>
-                    Focus enables you to stay on track with your daily objectives and goals. Set and meet your personal commitments, receive advice and invaluable support from other users and earn tips to support your side projects. Focus provides a fantastic framework for you to pursue and develop your passions and grow as an individual. 
+                    <div class="completion-buttons">
+                        <div class="col-lg-3 col-lg-push-3 col-md-3 col-md-push-3 col-xs-6">
+                            <a href="#" class="btn btn-success btn-lg btn-block" ng-click="taskCompleted(false)">I'm completed</a>
+                        </div>
 
-                </p>
+                        <div class="col-lg-3 col-lg-push-3 col-md-3 col-md-push-3 col-xs-6">
+                            <a href="#" class="btn btn-default btn-lg btn-block goal-not-reached-btn" ng-click="taskCompleted(false)">I didn't reach my goal</a>
+                        </div>
+                    </div>
+                </div>
+
+        <!--
+            <div class="row">
+                <div class="completion-desc">
+                    <div class="form-group">
+                        <input class="form control" data-ng-scope="task.completion.comment">
+                    </div>
+                </div>
             </div>
-            <div id="FAQ3" class="FAQs col-md-6 col-md-offset-3" id="bottom">
-                <h1>Meet the Team</h1>
-                <p>
-                    Mark Sonnenschein - Project Leader
-                    <br/>
-                    Daniel Shektman - Chief Obfuscator
-                    <br/>
-                    Nathan Feiglin - Lead Developer
-                </p>
+-->
+
             </div>
         </section>
-    </div>
-    <div id="footer">
-        
-        <div class="modal" id="loginModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" data-dismiss="modal">X</button>
-                        <h4 class="modal-title">Login</h4>
-                    </div>  
-                    <div class="modal-body">
-                        <div class="modalBody">
-                            <form>
-                                <div class="form-group">
-                                    <div class="col-md-6">
-                                        <label for="firstname">...</label>
-                                        <input type="text" class="form-control" name="firstname" required/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="surname">...</label>
-                                        <input type="text" class="form-control" name="surname"/>
-                                    </div>   
-                                </div>    
-                            </form>
-                        </div>
-                    </div>  
-                    <div class="modal-footer">
-                        <button class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button class="btn btn-success" data-dismiss="modal">Save</button>
-                    </div>  
-                </div>
-            </div>
-        </div>
 
-        
-        <div class="modal" id="signupModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" data-dismiss="modal">X</button>
-                        <h4 class="modal-title">Sign Up</h4>
-                    </div>  
-                    <div class="modal-body">
-                        <h4 class="modal-title">Nice Modal!</h4>
-                    </div>  
-                    <div class="modal-footer">
-                        <button class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button class="btn" data-dismiss="modal">Login</button>
-                    </div>  
+        <div id="mainPage">
+            <section id="secondColour">
+                <div id="FAQ1" class="FAQs col-md-6 col-md-offset-3">
+                    <h1>What is Focus</h1>
+                    <p>
+                        Focus is a platform with a mantra. It’s all about building the things you love, one day at a time. Post a daily project of your choice and succeed in completing it with the help and support of a community of like-minded users. Earn reputation credit and tips from others as you complete your goals and enhance your skillset. 
+
+                    </p>
+                </div>
+                <div id="FAQ2" class="FAQs col-md-6 col-md-offset-3">
+                    <h1>How can Focus help me?</h1>
+                    <p>
+                        Focus enables you to stay on track with your daily objectives and goals. Set and meet your personal commitments, receive advice and invaluable support from other users and earn tips to support your side projects. Focus provides a fantastic framework for you to pursue and develop your passions and grow as an individual. 
+
+                    </p>
+                </div>
+                <div id="FAQ3" class="FAQs col-md-6 col-md-offset-3" id="bottom">
+                    <h1>Meet the Team</h1>
+                    <p>
+                        Mark Sonnenschein - Project Leader
+                        <br/>
+                        Daniel Shektman - Chief Obfuscator
+                        <br/>
+                        Nathan Feiglin - Lead Developer
+                    </p>
+                </div>
+            </section>
+        </div>
+        <div id="footer">
+
+            <div class="modal" id="loginModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal">X</button>
+                            <h4 class="modal-title">Login</h4>
+                        </div>  
+                        <div class="modal-body">
+                            <div class="modalBody">
+                                <form ng-submit="login()">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <label for="firstname">...</label>
+                                            <input type="text" class="form-control" name="firstname" required/>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="surname">...</label>
+                                            <input type="text" class="form-control" name="surname"/>
+                                        </div>   
+                                    </div>    
+                                </form>
+                            </div>
+                        </div>  
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button class="btn btn-success" data-dismiss="modal">Save</button>
+                        </div>  
+                    </div>
                 </div>
             </div>
+
+
+            <div class="modal" id="signupModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal">X</button>
+                            <h4 class="modal-title">Sign Up</h4>
+                        </div>  
+                        <div class="modal-body">
+                            <h4 class="modal-title">Nice Modal!</h4>
+                        </div>  
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button class="btn" data-dismiss="modal">Login</button>
+                        </div>  
+                    </div>
+                </div>
+            </div>    
         </div>    
-    </div>    
-</div>     
-</body></html>
+    </div>     
+</body>
+</html>
