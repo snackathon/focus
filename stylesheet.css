@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+/*First Colour*/
+#firstColour{
+    background: url(assets/backgroundPhoto.jpg) no-repeat center           center fixed; 
+    opacity: 0.7;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    height: 100vh;
+    width: 100%;
+    color: white;
+    padding-top: 1px;
+    font-family: 'Josefin Slab', serif;
+}
+#firstColour h1{
+    font-weight: bold;
+    padding-top: 40vh;
+    text-align: center;
+    font-size: 50px;
+}
+#firstColour h1 span {
+    font-weight: 500;
+}
+h2 {
+    text-align: center;
+}
+#myBuildField {
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #000000;
+    text-align: center;
+}
+.navButtons{
+    width: 100px;
+    height: 40px;
+    background-color: black;
+    margin-top: 20px;
+    float: right;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: black !important;
+}
+a:hover{
+    color: black !important;
+    text-decoration: none;
+}
+#signup{
+    background-color: rgba(000,169,000,.8);
+    transition: all .6s ease 0s;
+}
+#signup:hover{
+    background-color: rgba(000,169,000,1);
+}
+#login{
+    background-color: rgba(67,160,223,.8);
+    margin-right: 20px;
+    transition: all .6s ease 0s;
+}
+#login:hover{
+    background-color: rgba(67,160,223,1);
+}
+
+/*Second colour*/
+#secondColour{
+    background: rgba(236,240,241,.6)/*rgba(255,228,196,.1)*/;
+    height: 100vh;
+    width: 100%;
+    color: black;
+    
+}
+.FAQs{
+    margin-top: 40px;
+    height: 180px;
+    transition: all 1s ease 0s;
+    text-align: justify;
+    text-align: center;
+    border-radius: 5px;
+    border-bottom: 1px solid gray;
+}
+p{
+    line-height: 20px;
+    text-align: justify;
+    padding: 0 20px;
+}
+#bottom{
+    margin-bottom: 40px;
+}
