@@ -67,7 +67,9 @@ a:hover{
 #login:hover{
     background-color: rgba(67,160,223,1);
 }
-
+.modalBody{
+margin-bottom: 20px;
+}
 /*Second colour*/
 #secondColour{
     background: rgba(236,240,241,.6)/*rgba(255,228,196,.1)*/;

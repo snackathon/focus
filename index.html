@@ -72,6 +72,7 @@
         </section>
     </div>
     <div id="footer">
+        
         <div class="modal" id="loginModal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -80,15 +81,30 @@
                         <h4 class="modal-title">Login</h4>
                     </div>  
                     <div class="modal-body">
-                        <h4 class="modal-title">Nice Modal!</h4>
+                        <div class="modalBody">
+                            <form>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label for="firstname">...</label>
+                                        <input type="text" class="form-control" name="firstname" required/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="surname">...</label>
+                                        <input type="text" class="form-control" name="surname"/>
+                                    </div>   
+                                </div>    
+                            </form>
+                        </div>
                     </div>  
                     <div class="modal-footer">
                         <button class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button class="btn" data-dismiss="modal">Login</button>
+                        <button class="btn btn-success" data-dismiss="modal">Save</button>
                     </div>  
                 </div>
             </div>
         </div>
+
+        
         <div class="modal" id="signupModal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -101,12 +117,11 @@
                     </div>  
                     <div class="modal-footer">
                         <button class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button class="btn" data-dismiss="modal">Sign Up</button>
+                        <button class="btn" data-dismiss="modal">Login</button>
                     </div>  
                 </div>
             </div>
         </div>    
     </div>    
-            
-</div>
+</div>     
 </body></html>
