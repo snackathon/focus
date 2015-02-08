@@ -23,13 +23,18 @@
 <body>
 <div id="container">
     <section id="firstColour">
-        <div id="login" class="navButtons">
-            <a data-toggle="modal" data-target="#loginModal">Login</a>
-        </div>
-        <div id="signup" class="navButtons">
-            <a data-toggle="modal" data-target="#signupModal">Sign Up</a>
-        </div>
-
+        
+            <a data-toggle="modal" data-target="#loginModal">
+                <div id="login" class="navButtons">
+                    Login
+                </div>
+            </a>    
+       
+            <a data-toggle="modal" data-target="#signupModal">
+                <div id="signup" class="navButtons">
+                    Sign Up
+                </div>
+            </a>
         <h1>
             Focus:
             <span>Build something Every Day</span>
@@ -103,12 +108,12 @@
                             <form>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <label for="firstname">...</label>
-                                        <input type="text" class="form-control" name="firstname" required/>
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" name="username" required/>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="surname">...</label>
-                                        <input type="text" class="form-control" name="surname"/>
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" name="password"/>
                                     </div>   
                                 </div>    
                             </form>
@@ -116,7 +121,7 @@
                     </div>  
                     <div class="modal-footer">
                         <button class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button class="btn btn-success" data-dismiss="modal">Save</button>
+                        <button class="btn btn-success" data-dismiss="modal">Login</button>
                     </div>  
                 </div>
             </div>
@@ -131,11 +136,24 @@
                         <h4 class="modal-title">Sign Up</h4>
                     </div>  
                     <div class="modal-body">
-                        <h4 class="modal-title">Nice Modal!</h4>
+                        <div class="modalBody">
+                            <form>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" name="username" required/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" name="password"/>
+                                    </div>   
+                                </div>    
+                            </form>
+                        </div>
                     </div>  
                     <div class="modal-footer">
                         <button class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button class="btn" data-dismiss="modal">Login</button>
+                        <button class="btn btn-success" data-dismiss="modal">Sign Up</button>
                     </div>  
                 </div>
             </div>
