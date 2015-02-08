@@ -102,7 +102,9 @@ p{
     color: #2E2E2E;
     font-weight: 400;
 }
-
+.modalBody {
+    margin-bottom: 100px;
+}
 /*
 .completion-desc {
     padding-top: 16px;
