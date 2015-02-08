@@ -42,6 +42,7 @@ window.oneThing = function(notifier){
         if(authData) {
             console.log(authData);
             this.uid = authData.uid;
+            window.user = authData;
         }
 
     }
@@ -49,7 +50,7 @@ window.oneThing = function(notifier){
     
     this.fb.onAuth(onAuthChange);
     
-    this.publishActivity(user_id, activity_title, activity_desc) {
+    this.publishActivity = function(user_id, activity_title, activity_desc) {
     var ref = new Firebase("https://radiant-torch-4176.firebaseio.com/activities/" + user_id);
     ref.push({
         title: activity_title,
@@ -57,45 +58,14 @@ window.oneThing = function(notifier){
     });
 };
 
-};
-
-
-
-(function(){
-    
-    var toastOptions = {
-        "positionClass": "toast-top-full-width"
-    };
-    
-     function onFirebaseFail(error) {
-        console.log(error);
-        
-        toastr.info(error.message, null, toastOptions);
-    };
-    
-    function onLoginSuccess() {
-        toastr.success("You're logged in, welcome", null, toastOptions);
-    }
-    
-    function successToast(message) {
-        toastr.success(message, null, toastOptions);
-    }
-    
-
-    
-    var thing = new oneThing(window.toastr);
     /*
-    thing.registerUser("nathan.f1234+3@gmail.com", "testing123",
-    function(email, password){
-        successToast("You've signed up successfully");
-        thing.loginUser(email, password, onLoginSuccess, onFirebaseFail);
-    },onFirebaseFail);
-    */
-    
-    thing.loginUser("nathan.f1234@gmail.com", "testing123", onLoginSuccess, onFirebaseFail);
-    thing.publish
+this.activityRef = new Firebase("https://radiant-torch-4176.firebaseio.com/activities/");
+                                       
+        this.activityRef.on('child_added', function(newChild, oldChild) {
+            console.log(newChild);
+            toastr.info(newChild.title);
+        });
         
+        */
 
-    
-    
-})();
+};
